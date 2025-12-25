@@ -6,6 +6,10 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
+Route::get('/health', function () {
+    return response('OK', 200);
+});
+
 /*
 |--------------------------------------------------------------------------
 | Auth Routes
@@ -42,8 +46,4 @@ Route::middleware(['auth'])->group(function () {
         Route::resource('books', BookController::class)
             ->except(['index', 'show']);
     });
-});
-
-Route::get('/health', function () {
-    return response('OK', 200);
 });
