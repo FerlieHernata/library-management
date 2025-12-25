@@ -43,3 +43,7 @@ Route::middleware(['auth'])->group(function () {
             ->except(['index', 'show']);
     });
 });
+
+Route::get('/health', function () {
+    return response('OK', 200);
+});
